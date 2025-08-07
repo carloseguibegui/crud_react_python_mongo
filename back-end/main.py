@@ -19,7 +19,8 @@ from passlib.context import CryptContext
 # Cargar variables de entorno
 load_dotenv()
 # Configuración de la base de datos MongoDB
-MONGO_URL = "mongodb://localhost:27017"
+# MONGO_URL = "mongodb://localhost:27017"
+MONGO_URL = os.getenv("MONGO_URL")
 client = AsyncIOMotorClient(MONGO_URL)
 db  = client.test_database 
 print('------------------------')
